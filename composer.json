@@ -1,0 +1,42 @@
+{
+    "name": "king/orm",
+    "description": "Orm basic schema & generators",
+    "authors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "King\\Orm\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://toran.moefantay.com/repo/private/"
+        },
+        {
+            "type": "composer",
+            "url": "http://satis.moefantay.com/"
+        },
+        {"packagist": false}
+    ],
+    "bin": ["bin/korm.php"],
+    "config": {
+             "secure-http": false
+    },
+    "require": {
+        "common/dependency": "dev-master"
+    },
+    "require-dev": {
+        "symfony/console": "~2.6",
+        "symfony/yaml": "~2.6",
+        "doctrine/dbal": "~2.5"
+    },
+    "extra": {
+        "branch-alias": {
+        }
+    }
+}

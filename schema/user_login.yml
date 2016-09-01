@@ -1,0 +1,43 @@
+package: user
+name: user_login
+columns:
+  -
+    name: id
+    type: integer
+    option:
+      autoincrement: true
+  -
+    name: type
+    type: string
+    comment: 登录方式
+    option:
+      length: 32
+  -
+    name: login
+    type: string
+    option:
+      length: 255
+  -
+    name: uuid
+    type: integer
+    relation:
+      ko_user:
+        comment: has_many
+  -
+     name: ctime
+     type: integer
+  -
+     name: mtime
+     type: integer
+indexes:
+  -
+    comment: 登陆时使用
+    columns:
+      - login
+      - type
+pk:
+  - id
+comment: |
+  ## 登录方式表
+
+  __just a sample__

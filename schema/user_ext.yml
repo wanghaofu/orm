@@ -1,0 +1,59 @@
+package: user
+name: user_ext
+schema_ext:
+    idx: 0 - 9
+columns:
+  -
+    name: uuid
+    type: bigint
+    comment: 用户ID
+    length: 20
+  -
+    name: email
+    type: string
+    comment: 邮箱
+    option:
+      default: ''
+      length: 255
+      notnull: false
+  -
+    name: have_bind_email
+    type: smallint
+    comment: 是否绑邮箱 0 未绑定 1 已绑定 邮箱为真 通过邮箱激活后设置为绑定
+    option:
+      default: 0
+  -
+    name: quick_reg
+    type: smallint
+    comment: 注册途径 0  正常注册 1 快速注册 默认为正常注册
+    option:
+      default: 0
+  -
+    name: realname
+    type: string
+    comment: 真实姓名
+    option:
+      length: 255
+      notnull: false
+  -
+    name: real_ip
+    comment: 注册ip
+    type: string
+    option:
+      length: 32
+      notnull: false
+  -
+     name: ctime
+     type: integer
+  -
+     name: mtime
+     type: integer
+indexes:
+  -
+    comment: 查询
+    columns:
+    - uuid
+pk:
+  - uuid
+comment: |
+  ## 用户扩展表

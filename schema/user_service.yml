@@ -1,0 +1,74 @@
+package: user
+name: user_service
+schema_ext:
+    idx: 0 - 9
+columns:
+  -
+    name: id
+    type: bigint
+    comment: 自增id
+    option:
+      autoincrement: true
+  -
+    name: uuid
+    type: bigint
+    comment: 用户ID
+    option:
+      length: 20
+  -
+    name: puid
+    type: bigint
+    comment: 老平台id
+    option:
+      default: 0
+      length: 20
+  -
+    name: uid
+    type: bigint
+    comment: 游戏内角色id
+    option:
+      length: 20
+      default: 0
+      notnull: false
+  -
+    name: agent
+    comment: 客户端标识
+    type: string
+    option:
+      length: 255
+      notnull: false
+  -
+    name: app_id
+    comment: app id
+    type: integer
+    option:
+      default: 0
+      length: 10
+  -
+    name: device_id
+    comment: 设备id
+    type: string
+    option:
+      default: ''
+      length: 200
+      notnull: false
+  -
+     name: ctime
+     type: integer
+     option:
+      notnull: false
+  -
+     name: mtime
+     type: integer
+     option:
+       notnull: false
+indexes:
+  -
+    unique: false
+    comment: 查询
+    columns:
+      - uuid
+pk:
+  - id
+comment: |
+  ## 用户服务表

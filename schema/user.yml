@@ -1,0 +1,62 @@
+package: user
+name: user
+schema_ext:
+    idx: 0 - 9
+    link: _
+columns:
+  -
+    name: uuid
+    type: bigint
+    option:
+      length: 20
+  -
+    name: username
+    type: string
+    comment: 用户名
+    option:
+      length: 255
+  -
+    name: password
+    type: string
+    comment: 密码1 password_hash default
+    option:
+      length: 256
+      default: ''
+      notnull: false
+  -
+    name: password2
+    type: string
+    comment: 密码2 md5
+    option:
+      length: 60
+      default: ''
+      notnull: false
+  -
+    name: conflict
+    type: integer
+    comment: 帐号是否冲突 不冲突 :0 ; 冲突: 1 次字段为临时 当冲突完成后 将清理掉
+    option:
+      length: 3
+      default: 0
+  -
+    name: os
+    type: integer
+    comment: 操作系统类型 andorid: 0 ; ios: 1  次字段为临时 当冲突完成后 将清理掉
+    option:
+      length: 3
+      default: 0
+  -
+   name: ctime
+   type: datetime
+  -
+   name: mtime
+   type: datetime
+indexes:
+  -
+    comment: 用户主表
+    columns:
+
+pk:
+  - username
+comment: |
+  ## 用户表

@@ -1,0 +1,53 @@
+name: user_operator_log
+columns:
+  -
+    name: id
+    type: integer
+    option:
+     autoincrement: true
+  -
+    name: uuid
+    type: integer
+    comment: 用户uid
+  -
+    name: operate_source
+    type: smallint
+    comment: 操作来源  1：用户    2：系统
+    option:
+      length: 6
+  -
+    name: operate_type
+    type: smallint
+    comment: 操作类型
+    option:
+      length: 6
+  -
+    name: operator_content
+    type: text
+    comment: 操作内容,自定义json格式存放
+    option:
+      notnull: false
+      default: ""
+  -
+    name: remark
+    type: text
+    comment: 备注
+    option:
+      notnull: false
+      default: ""
+  -
+     name: ctime
+     type: integer
+  -
+     name: mtime
+     type: integer
+
+indexes:
+  -
+    comment: id
+    columns:
+      - id
+pk:
+  - id
+comment: |
+  ## 用户操作日志表

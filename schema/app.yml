@@ -1,0 +1,32 @@
+package: user
+name: app
+columns:
+  -
+    name: app_id
+    type: bigint
+    comment: 自增id
+    option:
+      autoincrement: true
+  -
+    name: name
+    type: string
+    comment: 服务名称
+    option:
+      length: 255
+      notnull: false
+  -
+    name: app_key
+    type: string
+    comment: 服务链接密钥
+    option:
+      length: 255
+      notnull: false
+indexes:
+  -
+    unique: false
+    comment: 查询
+    columns:
+pk:
+  - app_id
+comment: |
+  ## 应用表
