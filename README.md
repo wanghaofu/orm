@@ -478,4 +478,4 @@ return [$joinedList->getPager(), $joinedList->fetch(1)];
   ]
 ]
 ```
-
+end
